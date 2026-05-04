@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Lux</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #fff0f6;
+}
+
+header {
+  background: #ff4da6;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: white;
+  padding: 10px;
+}
+
+nav a {
+  color: #ff4da6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #ff4da6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ff4da6;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>Team Lux 🎮</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#team">Team</a>
+<a href="#events">Events</a>
+<a href="#tryouts">Tryouts</a>
+</nav>
+
+<section id="home">
+<h1 style="color:#ff4da6;">Welcome to Team Lux</h1>
+<p>Competitive Fortnite Esports Organization</p>
+</section>
+
+<section id="team">
+<h2>Roster</h2>
+<div class="card">
+<p>Players coming soon...</p>
+</div>
+</section>
+
+<section id="events">
+<h2>Events</h2>
+<div class="card">
+<p>No events yet</p>
+</div>
+</section>
+
+<section id="tryouts">
+<h2>Tryout Application</h2>
+
+<div class="card">
+<form action="https://formspree.io/f/xexample" method="POST">
+
+<input name="epic" placeholder="Epic Username" required>
+<input name="age" placeholder="Age" required>
+<input name="region" placeholder="Region" required>
+<input name="pr" placeholder="PR / Earnings" required>
+
+<textarea name="why" placeholder="Why join Team Lux?" required></textarea>
+
+<button type="submit">Submit Tryout</button>
+
+</form>
+</div>
+
+</section>
+
+<footer>
+© 2026 Team Lux
+</footer>
+
+</body>
+</html>
