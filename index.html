@@ -85,20 +85,20 @@ section h2 {
 }
 
 .team-lux-logo {
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   height: auto;
   margin: 0 auto 30px;
-  filter: drop-shadow(0 0 20px rgba(255, 77, 166, 0.5));
-  animation: glow 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px rgba(255, 77, 166, 0.6));
+  animation: glow 2.5s ease-in-out infinite;
 }
 
 @keyframes glow {
   0%, 100% {
-    filter: drop-shadow(0 0 20px rgba(255, 77, 166, 0.5));
+    filter: drop-shadow(0 0 25px rgba(255, 77, 166, 0.6)) brightness(1);
   }
   50% {
-    filter: drop-shadow(0 0 30px rgba(255, 77, 166, 0.8));
+    filter: drop-shadow(0 0 40px rgba(255, 77, 166, 1)) brightness(1.1);
   }
 }
 
@@ -108,6 +108,10 @@ section h2 {
   margin-top: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.logo-section p {
+  color: #b0b0b0;
 }
 
 .hero {
@@ -393,9 +397,50 @@ footer a:hover {
 
 <section id="home">
   <div class="logo-section">
-    <img class="team-lux-logo" src="https://images.unsplash.com/photo-1578296469507-f4d60a5b49d3?w=500&h=500&fit=crop" alt="Team Lux Logo">
+    <svg class="team-lux-logo" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="luxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ff4da6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ff1493;stop-opacity:1" />
+        </linearGradient>
+        <filter id="luxGlow">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      
+      <!-- Large Outer Star -->
+      <polygon points="250,50 290,150 400,150 320,210 360,310 250,250 140,310 180,210 100,150 210,150" 
+               fill="none" stroke="url(#luxGrad)" stroke-width="10" filter="url(#luxGlow)"/>
+      
+      <!-- Medium Star -->
+      <polygon points="250,100 280,170 360,170 305,215 335,285 250,240 165,285 195,215 140,170 220,170" 
+               fill="url(#luxGrad)" opacity="0.8" filter="url(#luxGlow)"/>
+      
+      <!-- LUX Text - Large -->
+      <text x="250" y="350" font-size="110" font-weight="900" text-anchor="middle" 
+            fill="url(#luxGrad)" font-family="Arial Black, sans-serif" filter="url(#luxGlow)" 
+            letter-spacing="15">LUX</text>
+      
+      <!-- ESPORTS Text -->
+      <text x="250" y="420" font-size="32" text-anchor="middle" 
+            fill="url(#luxGrad)" font-family="Arial, sans-serif" filter="url(#luxGlow)" 
+            letter-spacing="5" font-weight="bold">ESPORTS</text>
+      
+      <!-- Decorative Elements -->
+      <circle cx="120" cy="450" r="6" fill="url(#luxGrad)" filter="url(#luxGlow)"/>
+      <circle cx="250" cy="470" r="6" fill="url(#luxGrad)" filter="url(#luxGlow)"/>
+      <circle cx="380" cy="450" r="6" fill="url(#luxGrad)" filter="url(#luxGlow)"/>
+      
+      <!-- Side Accent Lines -->
+      <line x1="50" y1="250" x2="120" y2="250" stroke="url(#luxGrad)" stroke-width="4" filter="url(#luxGlow)" stroke-linecap="round"/>
+      <line x1="380" y1="250" x2="450" y2="250" stroke="url(#luxGrad)" stroke-width="4" filter="url(#luxGlow)" stroke-linecap="round"/>
+    </svg>
     <h3>Team Lux Esports</h3>
-    <p style="color: #ff4da6; margin-top: 10px; font-size: 16px;">Dominating Fortnite Competitive Scene</p>
+    <p style="margin-top: 15px; font-size: 16px;">Dominating Fortnite Competitive Scene</p>
   </div>
 
   <div class="hero">
