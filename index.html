@@ -3,132 +3,562 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Lux</title>
+<title>Team Lux - Competitive Fortnite Esports</title>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: Arial;
-  background: #fff0f6;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0a0e27;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
 header {
-  background: #ff4da6;
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1493 100%);
   color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 28px;
+  padding: 40px 20px;
+  font-size: 42px;
   font-weight: bold;
+  box-shadow: 0 8px 32px rgba(255, 77, 166, 0.3);
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 10px;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  background: white;
-  padding: 10px;
+  gap: 30px;
+  background: rgba(255, 77, 166, 0.1);
+  padding: 15px 20px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #ff4da6;
 }
 
 nav a {
   color: #ff4da6;
   text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: #ff4da6;
+  color: #0a0e27;
+  transform: translateY(-2px);
 }
 
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 36px;
+  color: #ff4da6;
+  margin-bottom: 40px;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero {
+  background: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.7)), url('https://images.unsplash.com/photo-1538481143235-a9ceac8db001?w=1200&h=600&fit=crop') center/cover;
+  padding: 120px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #ff4da6;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #b0b0b0;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1493 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid #ff4da6;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 77, 166, 0.4);
 }
 
 .card {
-  background: white;
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
+  background: rgba(255, 77, 166, 0.1);
+  border: 2px solid #ff4da6;
+  padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  max-width: 500px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 77, 166, 0.3);
+  border-color: #ff1493;
+}
+
+.card h3 {
+  color: #ff4da6;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #b0b0b0;
+  line-height: 1.8;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.gallery-item {
+  background: rgba(255, 77, 166, 0.1);
+  border: 2px solid #ff4da6;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 77, 166, 0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.gallery-item-text {
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-item-text h3 {
+  color: #ff4da6;
+  margin-bottom: 10px;
+}
+
+.tournament-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: rgba(255, 77, 166, 0.05);
+  border: 2px solid #ff4da6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tournament-table th {
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1493 100%);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.tournament-table td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 77, 166, 0.2);
+  color: #e0e0e0;
+}
+
+.tournament-table tr:hover {
+  background: rgba(255, 77, 166, 0.1);
+}
+
+.tournament-table tr:last-child td {
+  border-bottom: none;
+}
+
+.status-upcoming {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.status-ongoing {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+.status-ended {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.form-group {
+  margin: 15px 0;
 }
 
 input, textarea {
   width: 100%;
+  padding: 12px;
   margin: 10px 0;
-  padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 2px solid #ff4da6;
+  background: rgba(255, 77, 166, 0.05);
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #808080;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background: rgba(255, 77, 166, 0.15);
+  box-shadow: 0 0 10px rgba(255, 77, 166, 0.3);
 }
 
 button {
   width: 100%;
-  padding: 12px;
-  background: #ff4da6;
+  padding: 15px;
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1493 100%);
   color: white;
   border: none;
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 77, 166, 0.4);
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  background: #ff4da6;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ff4da6 0%, #ff1493 100%);
   color: white;
+  margin-top: 60px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.social-links {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.social-links a {
+  margin: 0 15px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  header {
+    font-size: 32px;
+    padding: 30px 15px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .tournament-table {
+    font-size: 14px;
+  }
+
+  .tournament-table th, .tournament-table td {
+    padding: 10px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>Team Lux 🎮</header>
+<header>
+  Team Lux 🎮
+  <p>Competitive Fortnite Esports Organization</p>
+</header>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#team">Team</a>
-<a href="#events">Events</a>
-<a href="#tryouts">Tryouts</a>
+  <a href="#home">Home</a>
+  <a href="#team">Team</a>
+  <a href="#tournaments">Tournaments 2026</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#tryouts">Tryouts</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="home">
-<h1 style="color:#ff4da6;">Welcome to Team Lux</h1>
-<p>Competitive Fortnite Esports Organization</p>
+  <div class="hero">
+    <h1>Welcome to Team Lux</h1>
+    <p>Dominating the Fortnite Competitive Scene</p>
+    <a href="#tryouts" class="cta-button">Join Our Team</a>
+  </div>
 </section>
 
 <section id="team">
-<h2>Roster</h2>
-<div class="card">
-<p>Players coming soon...</p>
-</div>
+  <h2>Our Team</h2>
+  <div class="gallery">
+    <div class="card">
+      <h3>Elite Players</h3>
+      <p>Our roster consists of top-tier competitive Fortnite players with years of tournament experience and proven results on the global stage.</p>
+    </div>
+    <div class="card">
+      <h3>Championship Mindset</h3>
+      <p>Every team member is dedicated to excellence, continuous improvement, and representing Team Lux with pride at every tournament.</p>
+    </div>
+    <div class="card">
+      <h3>Professional Support</h3>
+      <p>We provide coaching, streaming support, and all resources needed to compete at the highest level of esports competition.</p>
+    </div>
+  </div>
 </section>
 
-<section id="events">
-<h2>Events</h2>
-<div class="card">
-<p>No events yet</p>
-</div>
+<section id="gallery">
+  <h2>Fortnite Competitive</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1538481143235-a9ceac8db001?w=400&h=250&fit=crop" alt="Fortnite Competitive Arena">
+      <div class="gallery-item-text">
+        <h3>Arena Battles</h3>
+        <p>High-stakes competitive matches</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=250&fit=crop" alt="Fortnite Tournament">
+      <div class="gallery-item-text">
+        <h3>Tournament Play</h3>
+        <p>Competing for glory and prizes</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f70504c8a?w=400&h=250&fit=crop" alt="Esports Gaming">
+      <div class="gallery-item-text">
+        <h3>Pro Gaming</h3>
+        <p>Professional esports excellence</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=250&fit=crop" alt="Team Strategy">
+      <div class="gallery-item-text">
+        <h3>Team Strategy</h3>
+        <p>Coordinated competitive play</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop" alt="Gaming Setup">
+      <div class="gallery-item-text">
+        <h3>Pro Setup</h3>
+        <p>Top-tier gaming equipment</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1505141468610-111b88e44e69?w=400&h=250&fit=crop" alt="Victory Celebration">
+      <div class="gallery-item-text">
+        <h3>Championships</h3>
+        <p>Celebrating tournament wins</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tournaments">
+  <h2>Fortnite Tournaments 2026</h2>
+  <table class="tournament-table">
+    <thead>
+      <tr>
+        <th>Tournament Name</th>
+        <th>Date</th>
+        <th>Prize Pool</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fortnite Championship Series Season 5</td>
+        <td>May 15 - May 22, 2026</td>
+        <td>$3,000,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+      <tr>
+        <td>FNCS: Global Championship</td>
+        <td>June 10 - June 20, 2026</td>
+        <td>$5,000,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+      <tr>
+        <td>Pro Scrims League Series 1</td>
+        <td>May 1 - May 14, 2026</td>
+        <td>$500,000</td>
+        <td class="status-ongoing">Ongoing</td>
+      </tr>
+      <tr>
+        <td>Fortnite Battle Royale Open</td>
+        <td>July 5 - July 12, 2026</td>
+        <td>$2,000,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+      <tr>
+        <td>Summer Smash Series</td>
+        <td>July 20 - August 3, 2026</td>
+        <td>$1,500,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+      <tr>
+        <td>Ranked Cup Tournament</td>
+        <td>August 10 - August 17, 2026</td>
+        <td>$750,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+      <tr>
+        <td>Fall Championship Qualifier</td>
+        <td>September 5 - September 20, 2026</td>
+        <td>$2,500,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+      <tr>
+        <td>World Cup Finals</td>
+        <td>October 15 - October 25, 2026</td>
+        <td>$10,000,000</td>
+        <td class="status-upcoming">Upcoming</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <section id="tryouts">
-<h2>Tryout Application</h2>
+  <h2>Tryout Application</h2>
+  
+  <div class="card" style="max-width: 600px;">
+    <p>Join Team Lux and compete at the highest level. Fill out the form below to apply for our team.</p>
+  </div>
 
-<div class="card">
-<form action="https://formspree.io/f/xexample" method="POST">
+  <div class="card" style="max-width: 600px;">
+    <form action="https://formspree.io/f/xexample" method="POST">
+      
+      <div class="form-group">
+        <input type="text" name="epic" placeholder="Epic Username" required>
+      </div>
 
-<input name="epic" placeholder="Epic Username" required>
-<input name="age" placeholder="Age" required>
-<input name="region" placeholder="Region" required>
-<input name="pr" placeholder="PR / Earnings" required>
+      <div class="form-group">
+        <input type="number" name="age" placeholder="Age" required>
+      </div>
 
-<textarea name="why" placeholder="Why join Team Lux?" required></textarea>
+      <div class="form-group">
+        <input type="text" name="region" placeholder="Region (NA, EU, AS, etc.)" required>
+      </div>
 
-<button type="submit">Submit Tryout</button>
+      <div class="form-group">
+        <input type="text" name="pr" placeholder="PR / Tournament Earnings" required>
+      </div>
 
-</form>
-</div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
 
+      <div class="form-group">
+        <textarea name="why" placeholder="Why do you want to join Team Lux?" rows="5" required></textarea>
+      </div>
+
+      <button type="submit">Submit Tryout Application</button>
+
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <div class="gallery">
+    <div class="card">
+      <h3>📧 Email</h3>
+      <p>For inquiries: contact@teamlux.gg</p>
+    </div>
+    <div class="card">
+      <h3>🎮 Discord</h3>
+      <p>Join our community: discord.gg/teamlux</p>
+    </div>
+    <div class="card">
+      <h3>🐦 Twitter</h3>
+      <p>Follow us @TeamLuxEsports</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-© 2026 Team Lux
+  <p>&copy; 2026 Team Lux Esports. All rights reserved.</p>
+  <p>Dedicated to Excellence in Competitive Fortnite</p>
+  <div class="social-links">
+    <a href="#" title="Twitter">𝕏</a>
+    <a href="#" title="Instagram">📸</a>
+    <a href="#" title="YouTube">▶</a>
+    <a href="#" title="Twitch">📺</a>
+    <a href="#" title="Discord">💬</a>
+  </div>
 </footer>
 
 </body>
