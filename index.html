@@ -76,6 +76,40 @@ section h2 {
   letter-spacing: 2px;
 }
 
+.logo-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(255, 77, 166, 0.05) 0%, rgba(255, 77, 166, 0.1) 100%);
+  border-radius: 15px;
+  margin-bottom: 60px;
+}
+
+.team-lux-logo {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 30px;
+  filter: drop-shadow(0 0 20px rgba(255, 77, 166, 0.5));
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(255, 77, 166, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 77, 166, 0.8));
+  }
+}
+
+.logo-section h3 {
+  color: #ff4da6;
+  font-size: 24px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .hero {
   background: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.7)), url('https://images.unsplash.com/photo-1538481143235-a9ceac8db001?w=1200&h=600&fit=crop') center/cover;
   padding: 120px 20px;
@@ -333,6 +367,10 @@ footer a:hover {
   .tournament-table th, .tournament-table td {
     padding: 10px;
   }
+
+  .team-lux-logo {
+    max-width: 300px;
+  }
 }
 </style>
 </head>
@@ -354,6 +392,48 @@ footer a:hover {
 </nav>
 
 <section id="home">
+  <div class="logo-section">
+    <svg class="team-lux-logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="luxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ff4da6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ff1493;stop-opacity:1" />
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      
+      <!-- Outer Shield -->
+      <path d="M 200 30 L 280 80 L 280 200 Q 200 300 200 300 Q 120 200 120 80 Z" 
+            fill="none" stroke="url(#luxGradient)" stroke-width="8" filter="url(#glow)"/>
+      
+      <!-- Inner Shield -->
+      <path d="M 200 50 L 260 90 L 260 200 Q 200 270 200 270 Q 140 200 140 90 Z" 
+            fill="none" stroke="url(#luxGradient)" stroke-width="6" filter="url(#glow)"/>
+      
+      <!-- LUX Text -->
+      <text x="200" y="240" font-size="120" font-weight="bold" text-anchor="middle" 
+            fill="url(#luxGradient)" font-family="Arial, sans-serif" filter="url(#glow)" 
+            letter-spacing="5">LUX</text>
+      
+      <!-- Crown/Star Symbol -->
+      <path d="M 200 80 L 210 110 L 240 110 L 215 130 L 225 160 L 200 140 L 175 160 L 185 130 L 160 110 L 190 110 Z" 
+            fill="url(#luxGradient)" filter="url(#glow)"/>
+      
+      <!-- ESPORTS Text -->
+      <text x="200" y="320" font-size="20" text-anchor="middle" 
+            fill="url(#luxGradient)" font-family="Arial, sans-serif" filter="url(#glow)" 
+            letter-spacing="3">ESPORTS</text>
+    </svg>
+    <h3>Team Lux Esports</h3>
+    <p style="color: #ff4da6; margin-top: 10px; font-size: 16px;">Dominating Fortnite Competitive Scene</p>
+  </div>
+
   <div class="hero">
     <h1>Welcome to Team Lux</h1>
     <p>Dominating the Fortnite Competitive Scene</p>
